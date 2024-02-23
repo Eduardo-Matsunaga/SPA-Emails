@@ -50,7 +50,6 @@ export function VerticalCard() {
       <VStack spacing="4">
         {emailList.map((email, index) => (
           <Box
-            padding={10}
             key={index}
             borderWidth="1px"
             borderRadius="lg"
