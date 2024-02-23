@@ -1,7 +1,6 @@
 // Importa os componentes necessários do Chakra UI e do React
 import { NavLink } from 'react-router-dom';
 import * as CH from '@chakra-ui/react';
-import React from 'react';
 
 // Função principal do componente Navbar
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type

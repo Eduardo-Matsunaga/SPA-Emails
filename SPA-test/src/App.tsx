@@ -1,6 +1,5 @@
 // Importa os componentes necessários do react-router-dom e React
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import React from 'react';
 
 // Importa os componentes de páginas e de navegação
 import Home from './pages/home';

@@ -1,8 +1,7 @@
 // Importa os componentes necessários do Chakra UI, React e outras dependências
-import { Flex, Image, VStack, Text, Heading, Box } from '@chakra-ui/react';
+import { Flex, VStack, Text, Heading, Box } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import React from 'react';
 
 // Componente VerticalCard responsável por exibir uma lista vertical de cartões
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
