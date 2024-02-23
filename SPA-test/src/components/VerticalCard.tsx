@@ -1,27 +1,34 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 // Importa os componentes necessários do Chakra UI, React e outras dependências
 import { Flex, VStack, Text, Heading, Box } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+interface Email {
+  name: string;
+  email: string;
+  body: string;
+}
+
 // Componente VerticalCard responsável por exibir uma lista vertical de cartões
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export function VerticalCard() {
   // Estado para armazenar a lista de emails
-  const [emailList, setEmailList] = useState([]);
+  const [emailList, setEmailList] = useState<Email[]>([]);
 
   // Estado para rastrear o índice que está sendo atualmente "hovered"
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   // Estado para rastrear o índice do cartão expandido
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   // Efeito colateral para buscar dados da API ao carregar o componente
   useEffect(() => {
     axios
       .get('https://jsonplaceholder.typicode.com/posts/1/comments')
       .then((res) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         setEmailList(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -29,7 +36,7 @@ export function VerticalCard() {
   }, []);
 
   // Manipulador de evento para quando o mouse entra em um cartão
-  const handleMouseEnter = (index) => {
+  const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
   };
 
@@ -39,7 +46,7 @@ export function VerticalCard() {
   };
 
   // Manipulador de evento para quando um cartão é clicado
-  const handleClick = (index) => {
+  const handleClick = (index: number) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     setExpandedIndex(index === expandedIndex ? null : index);
   };
