@@ -10,3 +10,7 @@ npm run dev
 
 sudo apt install nodejs npm
 
+# Confira o projeto online
+
+https://spa-emails.vercel.app/
+
